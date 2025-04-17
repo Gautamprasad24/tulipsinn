@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TulipsINN by VKG</title>
-    <link class="hello" rel="shortcut icon" href="images/tulipsinn.webp" type="image/webp" >
-    
+    <link rel="shortcut icon" href="images/tulipsinn.webp" type="image/webp">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         /* Reset and base styles */
@@ -213,6 +212,7 @@
         /* About Section */
         .about {
             padding: 80px 0;
+            
         }
 
         .section-title {
@@ -275,6 +275,9 @@
         }
 
         .about-text ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
             list-style: none;
             padding: 0;
             margin-top: 20px;
@@ -298,6 +301,7 @@
         .menu {
             padding: 80px 0;
             background: #f5f5f5;
+            
         }
 
         .menu-tabs {
@@ -328,7 +332,7 @@
 
         .menu-item {
             flex: 0 0 50%;
-            max-width: 50%;
+            max-width: 100%;
             padding: 15px;
         }
 
@@ -449,6 +453,7 @@
             text-transform: uppercase;
             font-size: 13px;
             font-weight: 600;
+            margin-right: 10px;
         }
 
         /* Hall Section */
@@ -482,6 +487,7 @@
         /* Book a Table Section */
         .book-a-table {
             padding: 80px 0;
+          
         }
 
         .booking-form {
@@ -612,7 +618,11 @@
             background: #fff;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
         }
-
+        .hi .chef-img img{
+            height: 400px;
+            /* width: 400px; */
+            /* overflow: hidden; */
+        }
         .chef-img {
             position: relative;
             overflow: hidden;
@@ -622,8 +632,8 @@
             width: 100%;
             transition: 0.3s;
         }
-
-        .chef-social {
+      
+         .chef-social {
             position: absolute;
             left: 0;
             bottom: -50px;
@@ -827,8 +837,8 @@
             color: #ffb03b;
         }
 
-        .hero-content h1 span{
-            color:#ffb03b;
+        .hero-content h1 span {
+            color: #ffb03b;
         }
 
         /* Mobile Sidebar Styles */
@@ -921,6 +931,86 @@
             display: block;
         }
 
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1002;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .modal-content h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .modal-content h4 {
+            font-size: 18px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .modal-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .modal-content ul li {
+            padding-left: 28px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .modal-content ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #ffb03b;
+        }
+
+        .view-more-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #ffb03b;
+            color: #fff;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
         /* Responsive Styles */
         @media (max-width: 991px) {
             .about-content .col,
@@ -988,9 +1078,215 @@
             }
 
             .logo {
-                order: 2; /* Move logo to the right */
+                order: 2;
+            }
+
+            .about-text ul {
+                grid-template-columns: 1fr;
             }
         }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-section {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #777;
+            font-size: 18px;
+        }
+
+        .menu-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .category-tab {
+            padding: 8px 20px;
+            background-color: #fff;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            border: 1px solid #ddd;
+        }
+
+        .category-tab:hover {
+            background-color: #ffa500;
+            color: #fff;
+        }
+
+        .category-tab.active {
+            background-color: #ffa500;
+            color: #fff;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            display: flex;
+            padding: 20px;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .item-image {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 45%;
+        }
+
+        .item-content {
+            flex-grow: 1;
+        }
+
+        .item-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .item-description {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .item-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffa500;
+        }
+
+        .category-content {
+            display: none;
+        }
+
+        .category-content.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .menu-items {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .item-image {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+        
+    /* Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+        background-color: #fff;
+        margin: 5% auto;
+        padding: 20px;
+        border-radius: 8px;
+        width: 80%;
+        max-width: 900px;
+        position: relative;
+    }
+
+    .modal-close {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #333;
+    }
+
+    .modal-close:hover {
+        color: #ffa500;
+    }
+
+    .modal-content h3 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #444;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .more-items {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.more-items-btn {
+    padding: 10px 20px;
+    background-color: #ffa500;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.more-items-btn:hover {
+    background-color: #e69500;
+}
     </style>
 </head>
 <body>
@@ -1074,7 +1370,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>About Us</h2>
-                <p>Learn More About Our Restaurant</p>
+                <!-- <p>Learn More About Our Restaurant</p> -->
             </div>
             <div class="about-content">
                 <div class="col about-img">
@@ -1097,6 +1393,7 @@
                         <li>CCTV</li>
                         <li>Free Wi-Fi</li>
                         <li>Air Conditioning</li>
+                        <li>Newspaper</li>
                     </ul>
                 </div>
             </div>
@@ -1106,130 +1403,1590 @@
     <!-- Menu Section -->
     <section id="menu" class="menu">
         <div class="container">
-            <div class="section-title">
-                <h2>Menu</h2>
-                <p>Check Our Tasty Menu</p>
+            <section class="menu-section">
+                <div class="section-title">
+                    <h2>Menu</h2>
+                    <p>Check Our Tasty Menu</p>
+                </div>
+    
+                <div class="menu-categories">
+                    <div class="category-tab active" data-category="starters">Starters</div>
+                    <div class="category-tab" data-category="soups-salads">Soups & Salads</div>
+                    <div class="category-tab" data-category="main-courses">Main Courses</div>
+                    <div class="category-tab" data-category="breads">Breads</div>
+                    <div class="category-tab" data-category="rice-biryani">Rice & Biryani</div>
+                    <div class="category-tab" data-category="fried-rice-noodles">Fried Rice & Noodles</div>
+                    <div class="category-tab" data-category="snacks">Snacks</div>
+                    <div class="category-tab" data-category="accompaniments">Accompaniments</div>
+                    <div class="category-tab" data-category="ice-creams-desserts">Ice Creams & Desserts</div>
+                </div>
+                
+                <div class="categories-container">
+                    <!-- Starters -->
+                    <div class="category-content active" id="starters">
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/starters/mushrroomTandori.jpg" alt="Mushroom Tandoori">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Mushroom Tandoori</h3>
+                                    <p class="item-description">Mushroom marinated in yogurt, Ajwain, Indian spices and grilled in tandoor</p>
+                                    <div class="item-price">₹300</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/starters/paneerTikka.jpeg" alt="Paneer Tikka">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Paneer Tikka</h3>
+                                    <p class="item-description">A popular dish of grilled paneer in spicy onion tomato gravy</p>
+                                    <div class="item-price">₹320</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/starters/vegseekakaba.jpg" alt="Veg Seekh Kebab">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Veg Seekh Kebab</h3>
+                                    <p class="item-description">Minced vegetable marinated in Indian spices, barbeque to perfection</p>
+                                    <div class="item-price">₹320</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/starters/paneerlasunitikka.jpg" alt="Paneer Lasuni Tikka">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Paneer Lasuni Tikka</h3>
+                                    <p class="item-description">A classical North Indian curry recipe made with paneer cubes in a garlic...</p>
+                                    <div class="item-price">₹320</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/starters/gobiTandori.webp" alt="Gobi Tandoori">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Gobi Tandoori</h3>
+                                    <p class="item-description">A popular Indian dish made by marinating cauliflower florets in a mixture of...</p>
+                                    <div class="item-price">₹370</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/starters/vegharabharakabab.jpg" alt="Veg Hara Bara Kebab">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Veg Hara Bara Kebab</h3>
+                                    <p class="item-description">Minced mix green vegetables mixed with spices and herbs shallow fry</p>
+                                    <div class="item-price">₹320</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/starters/bhindirajasthani.jpg" alt="Bhindi Rajasthani">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Bhindi Rajasthani</h3>
+                                    <p class="item-description">Thin strips of lady's finger mixed with besan flour and assorted spicy fried...</p>
+                                    <div class="item-price">₹270</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/starters/paneerchilli.jpg" alt="Paneer Chilli">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Paneer Chilli</h3>
+                                    <p class="item-description">Cubes of fried crispy paneer are tossed in a spicy sauce made with...</p>
+                                    <div class="item-price">₹320</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="more-items">
+                            <button class="more-items-btn" data-modal="startersModal">More Items</button>
+                        </div>
+                    </div>
+                
+                    <!-- Soups & Salads -->
+                    <div class="category-content" id="soups-salads">
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/soup&salad/French Onion Soup.jpg" alt="French Onion Soup">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">French Onion Soup</h3>
+                                    <p class="item-description">A puree of vegetable soup flavoured with grated cheese & fried onion</p>
+                                    <div class="item-price">₹165</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/soup&salad/Veg Lemon Coriander Soup.jpg" alt="Veg Lemon Coriander Soup">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Veg Lemon Coriander Soup</h3>
+                                    <p class="item-description">Lemon Coriander Soup is a rich creamy vegetarian soup flavoured with fresh coriander...</p>
+                                    <div class="item-price">₹165</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/soup&salad/Veg Noodles Soup.jpg" alt="Veg Noodles Soup">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Veg Noodles Soup</h3>
+                                    <p class="item-description">Veg noodle soup is a clear soup that is lightly spiced and mild...</p>
+                                    <div class="item-price">₹165</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/soup&salad/Cream of Spinach Soup.jpg" alt="Cream of Spinach Soup">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Cream of Spinach Soup</h3>
+                                    <p class="item-description">Puree of spinach garnished with cream</p>
+                                    <div class="item-price">₹165</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/soup&salad/Veg Manchow Soup.webp" alt="Veg Manchow Soup">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Veg Manchow Soup</h3>
+                                    <p class="item-description">Hot & spicy taste soup with mixed vegetable Scallion flavoured with relatively generous...</p>
+                                    <div class="item-price">₹165</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/soup&salad/Hot and Sour Veg Soup.jpg" alt="Hot and Sour Veg Soup">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Hot and Sour Veg Soup</h3>
+                                    <p class="item-description">Indo Chinese dish made with red, green chilli, ginger, carrot, cabbage, soya sauce...</p>
+                                    <div class="item-price">₹165</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/soup&salad/Sweet Corn Veg Soup.webp" alt="Sweet Corn Veg Soup">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Sweet Corn Veg Soup</h3>
+                                    <p class="item-description">Prepared with cream style corn and mixed vegetables</p>
+                                    <div class="item-price">₹165</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/soup&salad/Veg Clear Soup.jpg" alt="Veg Clear Soup">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Veg Clear Soup</h3>
+                                    <p class="item-description">A delicious nutritious low calories light soup with mixed vegetables and a tang...</p>
+                                    <div class="item-price">₹165</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="more-items">
+                            <button class="more-items-btn" data-modal="soupsSaladsModal">More Items</button>
+                        </div>
+                    </div>
+                
+                    <!-- Main Courses -->
+                    <div class="category-content" id="main-courses">
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/main course/Veg Sam Sabera.jpg" alt="Veg Sam Sabera">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Veg Sam Sabera</h3>
+                                    <p class="item-description">A vibrant vegetable dish, cooked with aromatic spices and a unique blend of...</p>
+                                    <div class="item-price">₹360</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/main course/veglajawab.jpg" alt="Veg Lajabab">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Veg Lajabab</h3>
+                                    <p class="item-description">A delightful mix of vegetables cooked in a rich, flavorful gravy with a...</p>
+                                    <div class="item-price">₹320</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/main course/AlooGobi.jpg" alt="Aloo Gobi">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Aloo Gobi</h3>
+                                    <p class="item-description">Tender potatoes and cauliflower cooked in a mild, spiced curry</p>
+                                    <div class="item-price">₹290</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/main course/Jeera Methi Palak.jpg" alt="Jeera Methi Palak">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Jeera Methi Palak</h3>
+                                    <p class="item-description">Spinach and fenugreek cooked with cumin for a flavorful, aromatic dish</p>
+                                    <div class="item-price">₹310</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/main course/Veg Patiala.jpg" alt="Veg Patiala">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Veg Patiala</h3>
+                                    <p class="item-description">Mixed vegetables cooked in a creamy, mildly spiced gravy with a royal touch</p>
+                                    <div class="item-price">₹340</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/main course/Corn Capsicum Masala.jpg" alt="Corn Capsicum Masala">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Corn Capsicum Masala</h3>
+                                    <p class="item-description">Sweet corn and crunchy capsicum cooked in a tangy, spiced gravy</p>
+                                    <div class="item-price">₹320</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/main course/Mushroom Masala.jpg" alt="Mushroom Masala">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Mushroom Masala</h3>
+                                    <p class="item-description">Mushrooms cooked in a rich, spiced curry with a blend of aromatic seasonings</p>
+                                    <div class="item-price">₹300</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/main course/Mushroom Tikka Masala.jpg" alt="Mushroom Tikka Masala">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Mushroom Tikka Masala</h3>
+                                    <p class="item-description">Grilled mushrooms in a creamy, spiced tikka masala sauce</p>
+                                    <div class="item-price">₹320</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="more-items">
+                            <button class="more-items-btn" data-modal="mainCoursesModal">More Items</button>
+                        </div>
+                    </div>
+                
+                    <!-- Breads -->
+                    <div class="category-content" id="breads">
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/roti & naan/Cheese Garlic Naan.jpg" alt="Cheese Garlic Naan">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Cheese Garlic Naan</h3>
+                                    <div class="item-price">₹130</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/roti & naan/Butter Garlic Naan.webp" alt="Butter Garlic Naan">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Butter Garlic Naan</h3>
+                                    <div class="item-price">₹110</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/roti & naan/Garlic Naan.jpg" alt="Garlic Naan">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Garlic Naan</h3>
+                                    <div class="item-price">₹95</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/roti & naan/Veg Stuffed Paratha.jpg" alt="Veg Stuffed Paratha">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Veg Stuffed Paratha</h3>
+                                    <div class="item-price">₹95</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/roti & naan/Cheese Paratha.webp" alt="Cheese Paratha">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Cheese Paratha</h3>
+                                    <div class="item-price">₹120</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/roti & naan/Paneer Paratha.jpg" alt="Paneer Paratha">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Paneer Paratha</h3>
+                                    <div class="item-price">₹110</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/roti & naan/Aloo Paratha.webp" alt="Aloo Paratha">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Aloo Paratha</h3>
+                                    <div class="item-price">₹90</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/roti & naan/Lachhedar Paratha.jpg" alt="Lachhedar Paratha">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Lachhedar Paratha</h3>
+                                    <div class="item-price">₹55</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="more-items">
+                            <button class="more-items-btn" data-modal="breadsModal">More Items</button>
+                        </div>
+                    </div>
+                
+                    <!-- Rice & Biryani -->
+                    <div class="category-content" id="rice-biryani">
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/rice&biryani/Veg Biryani.jpg" alt="Veg Biryani">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Veg Biryani</h3>
+                                    <p class="item-description"> Vegetable flavoured with Indian herbs and spices steamed with the finest basmati in India
+
+                                    </p>
+
+                                    <div class="item-price">₹180</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/rice&biryani/Mutton Biryani.jpeg" alt="Mutton Biryani">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Mutton Biryani</h3>
+                                    <p class="item-description"> Mutton rice cooked with Indian herbs and spices and steamed in hundi</p>
+                                   
+                                    <div class="item-price">₹430</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/rice&biryani/Dal Khichdi.jpg" alt="Dal Khichdi">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Dal Khichdi</h3>
+                                    <div class="item-price">₹219</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/rice&biryani/MasalaRice.webp" alt="Masala Rice">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Masala Rice</h3>
+                                    <div class="item-price">₹259</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/rice&biryani/Chicken Biryani.jpg" alt="Chicken Biryani">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Chicken Biryani</h3>
+                                    <p class="item-description">Chicken rice cooked with Indian herbs and spices and steamed in hundi</p>
+
+                                    <div class="item-price">₹320</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/rice&biryani/Veg Kadai Pulao.jpg" alt="Veg Kadai Pulao">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Veg Kadai Pulao</h3>
+                                    <div class="item-price">₹239</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/rice&biryani/Veg Pulao.jpg" alt="Veg Pulao">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Veg Pulao</h3>
+                                    <div class="item-price">₹239</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/rice&biryani/Jeera Rice.jpg" alt="Jeera Rice">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Jeera Rice</h3>
+                                    <div class="item-price">₹190</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="more-items">
+                            <button class="more-items-btn" data-modal="riceBiryaniModal">More Items</button>
+                        </div>
+                    </div>
+                
+                    <!-- Fried Rice & Noodles -->
+                    <div class="category-content" id="fried-rice-noodles">
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/noddles&friedRice/Veg Triple Schezwan Fried Rice.webp" alt="Veg Triple Schezwan Fried Rice">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Veg Triple Schezwan Fried Rice</h3>
+                                    <div class="item-price">₹320</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/noddles&friedRice/Veg Schezwan Fried Rice.webp" alt="Veg Schezwan Fried Rice">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Veg Schezwan Fried Rice</h3>
+                                    <div class="item-price">₹290</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/noddles&friedRice/Veg Fried Rice.webp" alt="Veg Fried Rice">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Veg Fried Rice</h3>
+                                    <div class="item-price">₹280</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/noddles&friedRice/Veg Hong Kong Fried Rice.webp" alt="Veg Hong Kong Fried Rice">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Veg Hong Kong Fried Rice</h3>
+                                    <div class="item-price">₹300</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/noddles&friedRice/Egg Schezwan Fried Rice.webp" alt="Egg Schezwan Fried Rice">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Egg Schezwan Fried Rice</h3>
+                                    <div class="item-price">₹310</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/noddles&friedRice/Egg Fried Rice.png" alt="Egg Fried Rice">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Egg Fried Rice</h3>
+                                    <div class="item-price">₹300</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/noddles&friedRice/Chicken Triple Schezwan Fried Rice.webp" alt="Chicken Triple Schezwan Fried Rice">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Chicken Triple Schezwan Fried Rice</h3>
+                                    <div class="item-price">₹350</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/noddles&friedRice/Chicken Fried Rice.jpg" alt="Chicken Fried Rice">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Chicken Fried Rice</h3>
+                                    <div class="item-price">₹320</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="more-items">
+                            <button class="more-items-btn" data-modal="friedRiceNoodlesModal">More Items</button>
+                        </div>
+                    </div>
+                
+                    <!-- Snacks -->
+                    <div class="category-content" id="snacks">
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/snacks/Corn Cheese Ball.webp" alt="Corn Cheese Ball">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Corn Cheese Ball</h3>
+                                    <p class="item-description">Crispy balls filled with creamy corn and cheese</p>
+                                    <div class="item-price">₹360</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/snacks/Corn Tikki.jpg" alt="Corn Tikki">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Corn Tikki</h3>
+                                    <p class="item-description">A mix of fresh corn or potatoes along with herbs and spices are...</p>
+                                    <div class="item-price">₹320</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/snacks/Aloo Tikki.jpg" alt="Aloo Tikki">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Aloo Tikki</h3>
+                                    <p class="item-description">A mix of fresh corn or potatoes along with herbs and spices are...</p>
+                                    <div class="item-price">₹320</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/snacks/Veg Cheese Tikki.jpg" alt="Veg Cheese Tikki">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Veg Cheese Tikki</h3>
+                                    <p class="item-description">A patties made of spiced minced vegetable, cheese and cottage cheese</p>
+                                    <div class="item-price">₹340</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/snacks/French Fries.jpg" alt="French Fries">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">French Fries</h3>
+                                    <div class="item-price">₹220</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/snacks/Veg Spring Roll.jpg" alt="Veg Spring Roll">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Veg Spring Roll</h3>
+                                    <p class="item-description">Thin crispy shell holding a trove of textures and flavours, stuffed with a...</p>
+                                    <div class="item-price">₹340</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/snacks/Egg Half Fry.jpg" alt="Egg Half Fry">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Egg Half Fry</h3>
+                                    <div class="item-price">₹130</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/snacks/Egg Omelette.jpg" alt="Egg Omelette">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Egg Omelette</h3>
+                                    <div class="item-price">₹130</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="more-items">
+                            <button class="more-items-btn" data-modal="snacksModal">More Items</button>
+                        </div>
+                    </div>
+                
+                    <!-- Accompaniments -->
+                    <div class="category-content" id="accompaniments">
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/Accompaniments/plaincurd.jpg" alt="Plain Curd">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Plain Curd</h3>
+                                    <div class="item-price">₹90</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/Accompaniments/Boondi Raita.jpeg" alt="Boondi Raita">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Boondi Raita</h3>
+                                    <div class="item-price">₹110</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/Accompaniments/Mix Veg Raita.jpg" alt="Mix Veg Raita">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Mix Veg Raita</h3>
+                                    <div class="item-price">₹100</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/Accompaniments/Pineapple Raita.webp" alt="Pineapple Raita">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Pineapple Raita</h3>
+                                    <div class="item-price">₹120</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/Accompaniments/Roasted Papad.jpg" alt="Roasted Papad">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Roasted Papad</h3>
+                                    <div class="item-price">₹60</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/Accompaniments/Masala Papad.jpg" alt="Masala Papad">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Masala Papad</h3>
+                                    <div class="item-price">₹90</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/Accompaniments/Fried Papad.webp" alt="Fried Papad">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Fried Papad</h3>
+                                    <div class="item-price">₹80</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="more-items">
+                            <button class="more-items-btn" data-modal="accompanimentsModal">More Items</button>
+                        </div>
+                    </div>
+                
+                    <!-- Ice Creams & Desserts -->
+                    <div class="category-content" id="ice-creams-desserts">
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/ice cream/Gudbud Ice Cream.avif" alt="Gudbud Ice Cream">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Gudbud Ice Cream</h3>
+                                    <p class="item-description">A delightful mix of ice cream layers with fruits, nuts, and syrup</p>
+                                    <div class="item-price">₹249</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/deserts/Fruit Salad.jpg" alt="Fruit Salad">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Fruit Salad</h3>
+                                    <p class="item-description">Fresh seasonal fruits tossed with a light dressing</p>
+                                    <div class="item-price">₹179</div>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="images/deserts/Cheese Cherry Pineapple.jpg" alt="Cheese Cherry Pineapple">
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="item-title">Cheese Cherry Pineapple</h3>
+                                    <p class="item-description">A sweet and tangy dessert with pineapple, cherries, and creamy cheese</p>
+                                    <div class="item-price">₹270</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="more-items">
+                            <button class="more-items-btn" data-modal="iceCreamsDessertsModal">More Items</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <!-- Modals -->
+            <div id="startersModal" class="modal">
+                <div class="modal-content">
+                    <span class="modal-close" onclick="closeModal('startersModal')">×</span>
+                    <h3>Starters</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/starters/mushrroomTandori.jpg" alt="Mushroom Tandoori">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Mushroom Tandoori</h3>
+                                <p class="item-description">Mushroom marinated in yogurt, Ajwain, Indian spices and grilled in tandoor</p>
+                                <div class="item-price">₹300</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/starters/paneerTikka.jpeg" alt="Paneer Tikka">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Paneer Tikka</h3>
+                                <p class="item-description">A popular dish of grilled paneer in spicy onion tomato gravy</p>
+                                <div class="item-price">₹320</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/starters/vegseekakaba.jpg" alt="Veg Seekh Kebab">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Veg Seekh Kebab</h3>
+                                <p class="item-description">Minced vegetable marinated in Indian spices, barbeque to perfection</p>
+                                <div class="item-price">₹320</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/starters/paneerlasunitikka.jpg" alt="Paneer Lasuni Tikka">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Paneer Lasuni Tikka</h3>
+                                <p class="item-description">A classical North Indian curry recipe made with paneer cubes in a garlic...</p>
+                                <div class="item-price">₹320</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/starters/gobiTandori.webp" alt="Gobi Tandoori">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Gobi Tandoori</h3>
+                                <p class="item-description">A popular Indian dish made by marinating cauliflower florets in a mixture of...</p>
+                                <div class="item-price">₹370</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/starters/vegharabharakabab.jpg" alt="Veg Hara Bara Kebab">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Veg Hara Bara Kebab</h3>
+                                <p class="item-description">Minced mix green vegetables mixed with spices and herbs shallow fry</p>
+                                <div class="item-price">₹320</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/starters/bhindirajasthani.jpg" alt="Bhindi Rajasthani">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Bhindi Rajasthani</h3>
+                                <p class="item-description">Thin strips of lady's finger mixed with besan flour and assorted spicy fried...</p>
+                                <div class="item-price">₹270</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/starters/paneerchilli.jpg" alt="Paneer Chilli">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Paneer Chilli</h3>
+                                <p class="item-description">Cubes of fried crispy paneer are tossed in a spicy sauce made with...</p>
+                                <div class="item-price">₹320</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/starters/garlicfry.jpg" alt="Garlic Fry">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Garlic Fry</h3>
+                                <div class="item-price">₹220</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/starters/greenpeasfry.jpg" alt="Green Peas Fry">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Green Peas Fry</h3>
+                                <div class="item-price">₹220</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="menu-tabs">
-                <div class="menu-tab active">All</div>
-                <div class="menu-tab">Starters</div>
-                <div class="menu-tab">Salads</div>
-                <div class="menu-tab">Specialty</div>
+    
+            <!-- Soups & Salads Modal -->
+            <div id="soupsSaladsModal" class="modal">
+                <div class="modal-content">
+                    <span class="modal-close" onclick="closeModal('soupsSaladsModal')">×</span>
+                    <h3>Soups & Salads</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/soup&salad/French Onion Soup.jpg" alt="French Onion Soup">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">French Onion Soup</h3>
+                                <p class="item-description">A puree of vegetable soup flavoured with grated cheese & fried onion</p>
+                                <div class="item-price">₹165</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/soup&salad/Veg Lemon Coriander Soup.jpg" alt="Veg Lemon Coriander Soup">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Veg Lemon Coriander Soup</h3>
+                                <p class="item-description">Lemon Coriander Soup is a rich creamy vegetarian soup flavoured with fresh coriander...</p>
+                                <div class="item-price">₹165</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/soup&salad/Veg Noodles Soup.jpg" alt="Veg Noodles Soup">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Veg Noodles Soup</h3>
+                                <p class="item-description">Veg noodle soup is a clear soup that is lightly spiced and mild...</p>
+                                <div class="item-price">₹165</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/soup&salad/Cream of Spinach Soup.jpg" alt="Cream of Spinach Soup">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Cream of Spinach Soup</h3>
+                                <p class="item-description">Puree of spinach garnished with cream</p>
+                                <div class="item-price">₹165</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/soup&salad/Veg Manchow Soup.webp" alt="Veg Manchow Soup">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Veg Manchow Soup</h3>
+                                <p class="item-description">Hot & spicy taste soup with mixed vegetable Scallion flavoured with relatively generous...</p>
+                                <div class="item-price">₹165</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/soup&salad/Hot and Sour Veg Soup.jpg" alt="Hot and Sour Veg Soup">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Hot and Sour Veg Soup</h3>
+                                <p class="item-description">Indo Chinese dish made with red, green chilli, ginger, carrot, cabbage, soya sauce...</p>
+                                <div class="item-price">₹165</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/soup&salad/Sweet Corn Veg Soup.webp" alt="Sweet Corn Veg Soup">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Sweet Corn Veg Soup</h3>
+                                <p class="item-description">Prepared with cream style corn and mixed vegetables</p>
+                                <div class="item-price">₹165</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/soup&salad/Veg Clear Soup.jpg" alt="Veg Clear Soup">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Veg Clear Soup</h3>
+                                <p class="item-description">A delicious nutritious low calories light soup with mixed vegetables and a tang...</p>
+                                <div class="item-price">₹165</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/soup&salad/Cream Tomato Soup.jpg" alt="Cream Tomato Soup">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Cream Tomato Soup</h3>
+                                <p class="item-description">The popular fresh tomato soup garnished with cream & croutons</p>
+                                <div class="item-price">₹165</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/soup&salad/cream of veg soup.webp" alt="Cream of Veg Soup">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Cream of Veg Soup</h3>
+                                <p class="item-description">This creamy vegetable soup is so easy and healthy...</p>
+                                <div class="item-price">₹165</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+    
+            <!-- Main Courses Modal -->
+            <div id="mainCoursesModal" class="modal">
+                <div class="modal-content">
+                    <span class="modal-close" onclick="closeModal('mainCoursesModal')">×</span>
+                    <h3>Main Courses</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/main course/Veg Sam Sabera.jpg" alt="Veg Sam Sabera">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Veg Sam Sabera</h3>
+                                <p class="item-description">A vibrant vegetable dish, cooked with aromatic spices and a unique blend of...</p>
+                                <div class="item-price">₹360</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/main course/veglajawab.jpg" alt="Veg Lajabab">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Veg Lajabab</h3>
+                                <p class="item-description">A delightful mix of vegetables cooked in a rich, flavorful gravy with a...</p>
+                                <div class="item-price">₹320</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/main course/AlooGobi.jpg" alt="Aloo Gobi">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Aloo Gobi</h3>
+                                <p class="item-description">Tender potatoes and cauliflower cooked in a mild, spiced curry</p>
+                                <div class="item-price">₹290</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/main course/Jeera Methi Palak.jpg" alt="Jeera Methi Palak">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Jeera Methi Palak</h3>
+                                <p class="item-description">Spinach and fenugreek cooked with cumin for a flavorful, aromatic dish</p>
+                                <div class="item-price">₹310</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/main course/Veg Patiala.jpg" alt="Veg Patiala">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Veg Patiala</h3>
+                                <p class="item-description">Mixed vegetables cooked in a creamy, mildly spiced gravy with a royal touch</p>
+                                <div class="item-price">₹340</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/main course/Corn Capsicum Masala.jpg" alt="Corn Capsicum Masala">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Corn Capsicum Masala</h3>
+                                <p class="item-description">Sweet corn and crunchy capsicum cooked in a tangy, spiced gravy</p>
+                                <div class="item-price">₹320</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/main course/Mushroom Masala.jpg" alt="Mushroom Masala">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Mushroom Masala</h3>
+                                <p class="item-description">Mushrooms cooked in a rich, spiced curry with a blend of aromatic seasonings</p>
+                                <div class="item-price">₹300</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/main course/Mushroom Tikka Masala.jpg" alt="Mushroom Tikka Masala">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Mushroom Tikka Masala</h3>
+                                <p class="item-description">Grilled mushrooms in a creamy, spiced tikka masala sauce</p>
+                                <div class="item-price">₹320</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/main course/Dum Aloo Punjabi.webp" alt="Dum Aloo Punjabi">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Dum Aloo Punjabi</h3>
+                                <p class="item-description">Baby potatoes slow cooked in a rich, spicy Punjabi gravy</p>
+                                <div class="item-price">₹295</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/main course/Green Peas Masala.jpg" alt="Green Peas Masala">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Green Peas Masala</h3>
+                                <p class="item-description">Green peas cooked in a flavorful, aromatic masala gravy</p>
+                                <div class="item-price">₹290</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Breads Modal -->
+            <div id="breadsModal" class="modal">
+                <div class="modal-content">
+                    <span class="modal-close" onclick="closeModal('breadsModal')">×</span>
+                    <h3>Breads</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/roti & naan/Cheese Garlic Naan.jpg" alt="Cheese Garlic Naan">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Cheese Garlic Naan</h3>
+                                <div class="item-price">₹130</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/roti & naan/Butter Garlic Naan.webp" alt="Butter Garlic Naan">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Butter Garlic Naan</h3>
+                                <div class="item-price">₹110</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/roti & naan/Garlic Naan.jpg" alt="Garlic Naan">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Garlic Naan</h3>
+                                <div class="item-price">₹95</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/roti & naan/Veg Stuffed Paratha.jpg" alt="Veg Stuffed Paratha">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Veg Stuffed Paratha</h3>
+                                <div class="item-price">₹95</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/roti & naan/Cheese Paratha.webp" alt="Cheese Paratha">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Cheese Paratha</h3>
+                                <div class="item-price">₹120</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/roti & naan/Paneer Paratha.jpg" alt="Paneer Paratha">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Paneer Paratha</h3>
+                                <div class="item-price">₹110</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/roti & naan/Aloo Paratha.webp" alt="Aloo Paratha">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Aloo Paratha</h3>
+                                <div class="item-price">₹90</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/roti & naan/Lachhedar Paratha.jpg" alt="Lachhedar Paratha">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Lachhedar Paratha</h3>
+                                <div class="item-price">₹55</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/roti & naan/Kulcha.jpg" alt="Kulcha">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Kulcha</h3>
+                                <div class="item-price">₹45</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/roti & naan/Naan.jpg" alt="Naan">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Naan</h3>
+                                <div class="item-price">₹50</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Rice & Biryani Modal -->
+            <div id="riceBiryaniModal" class="modal">
+                <div class="modal-content">
+                    <span class="modal-close" onclick="closeModal('riceBiryaniModal')">×</span>
+                    <h3>Rice & Biryani</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/rice&biryani/Curd Rice.jpg" alt="Curd Rice">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Curd Rice</h3>
+                                <div class="item-price">₹179</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/rice&biryani/Palak Khichdi.jpg" alt="Palak Khichdi">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Palak Khichdi</h3>
+                                <div class="item-price">₹229</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/rice&biryani/Dal Khichdi.jpg" alt="Dal Khichdi">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Dal Khichdi</h3>
+                                <div class="item-price">₹219</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/rice&biryani/MasalaRice.webp" alt="Masala Rice">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Masala Rice</h3>
+                                <div class="item-price">₹259</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/rice&biryani/Ghee Rice.jpg" alt="Ghee Rice">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Ghee Rice</h3>
+                                <div class="item-price">₹269</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/rice&biryani/Veg Kadai Pulao.jpg" alt="Veg Kadai Pulao">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Veg Kadai Pulao</h3>
+                                <div class="item-price">₹239</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/rice&biryani/Veg Pulao.jpg" alt="Veg Pulao">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Veg Pulao</h3>
+                                <div class="item-price">₹239</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/rice&biryani/Jeera Rice.jpg" alt="Jeera Rice">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Jeera Rice</h3>
+                                <div class="item-price">₹190</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/rice&biryani/Steamed Rice.jpg" alt="Steamed Rice">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Steamed Rice</h3>
+                                <div class="item-price">₹180</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/rice&biryani/Veg Biryani.jpg" alt="Veg Biryani">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Veg Biryani</h3>
+                                <p class="item-description">Vegetable flavoured with Indian herbs and spices steamed with the finest basmati in...</p>
+                                <div class="item-price">₹180</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Fried Rice & Noodles Modal -->
+            <div id="friedRiceNoodlesModal" class="modal">
+                <div class="modal-content">
+                    <span class="modal-close" onclick="closeModal('friedRiceNoodlesModal')">×</span>
+                    <h3>Fried Rice & Noodles</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/noddles&friedRice/Veg Triple Schezwan Fried Rice.webp" alt="Veg Triple Schezwan Fried Rice">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Veg Triple Schezwan Fried Rice</h3>
+                                <div class="item-price">₹320</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/noddles&friedRice/Veg Schezwan Fried Rice.webp" alt="Veg Schezwan Fried Rice">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Veg Schezwan Fried Rice</h3>
+                                <div class="item-price">₹290</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/noddles&friedRice/Veg Fried Rice.webp" alt="Veg Fried Rice">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Veg Fried Rice</h3>
+                                <div class="item-price">₹280</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/noddles&friedRice/Veg Hong Kong Fried Rice.webp" alt="Veg Hong Kong Fried Rice">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Veg Hong Kong Fried Rice</h3>
+                                <div class="item-price">₹300</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/noddles&friedRice/Egg Schezwan Fried Rice.webp" alt="Egg Schezwan Fried Rice">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Egg Schezwan Fried Rice</h3>
+                                <div class="item-price">₹310</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/noddles&friedRice/Egg Fried Rice.png" alt="Egg Fried Rice">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Egg Fried Rice</h3>
+                                <div class="item-price">₹300</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/noddles&friedRice/Chicken Triple Schezwan Fried Rice.webp" alt="Chicken Triple Schezwan Fried Rice">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Chicken Triple Schezwan Fried Rice</h3>
+                                <div class="item-price">₹350</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/noddles&friedRice/Chicken Fried Rice.jpg" alt="Chicken Fried Rice">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Chicken Fried Rice</h3>
+                                <div class="item-price">₹320</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/noddles&friedRice/Chicken Schezwan Fried Rice.webp" alt="Chicken Schezwan Fried Rice">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Chicken Schezwan Fried Rice</h3>
+                                <div class="item-price">₹320</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/noddles&friedRice/Chicken Combination Fried Rice.jpg" alt="Chicken Combination Fried Rice">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Chicken Combination Fried Rice</h3>
+                                <div class="item-price">₹350</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Snacks Modal -->
+            <div id="snacksModal" class="modal">
+                <div class="modal-content">
+                    <span class="modal-close" onclick="closeModal('snacksModal')">×</span>
+                    <h3>Snacks</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/snacks/Corn Cheese Ball.webp" alt="Corn Cheese Ball">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Corn Cheese Ball</h3>
+                                <p class="item-description">Crispy balls filled with creamy corn and cheese</p>
+                                <div class="item-price">₹360</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/snacks/Corn Tikki.jpg" alt="Corn Tikki">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Corn Tikki</h3>
+                                <p class="item-description">A mix of fresh corn or potatoes along with herbs and spices are...</p>
+                                <div class="item-price">₹320</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/snacks/Aloo Tikki.jpg" alt="Aloo Tikki">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Aloo Tikki</h3>
+                                <p class="item-description">A mix of fresh corn or potatoes along with herbs and spices are...</p>
+                                <div class="item-price">₹320</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/snacks/Veg Cheese Tikki.jpg" alt="Veg Cheese Tikki">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Veg Cheese Tikki</h3>
+                                <p class="item-description">A patties made of spiced minced vegetable, cheese and cottage cheese</p>
+                                <div class="item-price">₹340</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/snacks/French Fries.jpg" alt="French Fries">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">French Fries</h3>
+                                <div class="item-price">₹220</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/snacks/Veg Spring Roll.jpg" alt="Veg Spring Roll">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Veg Spring Roll</h3>
+                                <p class="item-description">Thin crispy shell holding a trove of textures and flavours, stuffed with a...</p>
+                                <div class="item-price">₹340</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/snacks/Egg Half Fry.jpg" alt="Egg Half Fry">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Egg Half Fry</h3>
+                                <div class="item-price">₹130</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/snacks/Egg Omelette.jpg" alt="Egg Omelette">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Egg Omelette</h3>
+                                <div class="item-price">₹130</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/snacks/Chicken Spring Roll.webp" alt="Chicken Spring Roll">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Chicken Spring Roll</h3>
+                                <p class="item-description">Thin crispy shell holding a trove of textures and flavours, stuffed with a...</p>
+                                <div class="item-price">₹370</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="images/snacks/Chicken Cheese Roll.jpg" alt="Chicken Cheese Roll">
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Chicken Cheese Roll</h3>
+                                <p class="item-description">Thin crispy marinated in sweet chilli sauce, wrapped with flat noodles deep fried...</p>
+                                <div class="item-price">₹370</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Accompaniments Modal -->
+            <!-- Accompaniments Modal -->
+    <div id="accompanimentsModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">×</span>
+            <h3>Accompaniments</h3>
             <div class="menu-items">
                 <div class="menu-item">
-                    <div class="menu-item-inner">
-                        <div class="menu-img">
-                            <img src="https://images.unsplash.com/photo-1627308594178-6da60d996b07" alt="Lobster Bisque">
-                        </div>
-                        <div class="menu-content">
-                            <h4>Lobster Bisque</h4>
-                            <div class="menu-ingredients">
-                                Lorem, deren, trataro, filede, nerada
-                            </div>
-                            <div class="menu-price">$5.95</div>
-                        </div>
+                    <div class="item-image">
+                        <img src="images/Accompaniments/plaincurd.jpg" alt="Plain Curd">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">Plain Curd</h3>
+                        <div class="item-price">₹90</div>
                     </div>
                 </div>
                 <div class="menu-item">
-                    <div class="menu-item-inner">
-                        <div class="menu-img">
-                            <img src="https://images.unsplash.com/photo-1625938146368-7a7a3f9494e1" alt="Crab Cake">
-                        </div>
-                        <div class="menu-content">
-                            <h4>Crab Cake</h4>
-                            <div class="menu-ingredients">
-                                A delicate crab cake served on a toasted roll with lettuce and tartar sauce
-                            </div>
-                            <div class="menu-price">$7.95</div>
-                        </div>
+                    <div class="item-image">
+                        <img src="images/Accompaniments/Boondi Raita.jpeg" alt="Boondi Raita">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">Boondi Raita</h3>
+                        <div class="item-price">₹110</div>
                     </div>
                 </div>
                 <div class="menu-item">
-                    <div class="menu-item-inner">
-                        <div class="menu-img">
-                            <img src="https://images.unsplash.com/photo-1608030804530-3e6e351a4f7c" alt="Caesar Salad">
-                        </div>
-                        <div class="menu-content">
-                            <h4>Caesar Selections</h4>
-                            <div class="menu-ingredients">
-                                Lorem, deren, trataro, filede, nerada
-                            </div>
-                            <div class="menu-price">$8.95</div>
-                        </div>
+                    <div class="item-image">
+                        <img src="images/Accompaniments/Mix Veg Raita.jpg" alt="Mix Veg Raita">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">Mix Veg Raita</h3>
+                        <div class="item-price">₹100</div>
                     </div>
                 </div>
                 <div class="menu-item">
-                    <div class="menu-item-inner">
-                        <div class="menu-img">
-                            <img src="https://images.unsplash.com/photo-1595675020697-37e2aaee6360" alt="Tuscan Grilled Chicken">
-                        </div>
-                        <div class="menu-content">
-                            <h4>Tuscan Grilled</h4>
-                            <div class="menu-ingredients">
-                                Grilled chicken with provolone, artichoke hearts, and roasted red pesto
-                            </div>
-                            <div class="menu-price">$9.95</div>
-                        </div>
+                    <div class="item-image">
+                        <img src="images/Accompaniments/Pineapple Raita.webp" alt="Pineapple Raita">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">Pineapple Raita</h3>
+                        <div class="item-price">₹120</div>
                     </div>
                 </div>
                 <div class="menu-item">
-                    <div class="menu-item-inner">
-                        <div class="menu-img">
-                            <img src="https://images.unsplash.com/photo-1627308594132-5d6ae0f3e4eb" alt="Mozzarella Sticks">
-                        </div>
-                        <div class="menu-content">
-                            <h4>Mozzarella Stick</h4>
-                            <div class="menu-ingredients">
-                                Lorem, deren, trataro, filede, nerada
-                            </div>
-                            <div class="menu-price">$4.95</div>
-                        </div>
+                    <div class="item-image">
+                        <img src="images/Accompaniments/Roasted Papad.jpg" alt="Roasted Papad">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">Roasted Papad</h3>
+                        <div class="item-price">₹60</div>
                     </div>
                 </div>
                 <div class="menu-item">
-                    <div class="menu-item-inner">
-                        <div class="menu-img">
-                            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" alt="Greek Salad">
-                        </div>
-                        <div class="menu-content">
-                            <h4>Greek Salad</h4>
-                            <div class="menu-ingredients">
-                                Fresh spinach, crisp romaine, tomatoes, and Greek olives
-                            </div>
-                            <div class="menu-price">$9.95</div>
-                        </div>
+                    <div class="item-image">
+                        <img src="images/Accompaniments/Masala Papad.jpg" alt="Masala Papad">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">Masala Papad</h3>
+                        <div class="item-price">₹90</div>
                     </div>
                 </div>
                 <div class="menu-item">
-                    <div class="menu-item-inner">
-                        <div class="menu-img">
-                            <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" alt="Spinach Salad">
-                        </div>
-                        <div class="menu-content">
-                            <h4>Spinach Salad</h4>
-                            <div class="menu-ingredients">
-                                Fresh spinach with mushrooms, hard boiled egg, and warm bacon vinaigrette
-                            </div>
-                            <div class="menu-price">$9.95</div>
-                        </div>
+                    <div class="item-image">
+                        <img src="images/Accompaniments/Fried Papad.webp" alt="Fried Papad">
                     </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-inner">
-                        <div class="menu-img">
-                            <img src="https://images.unsplash.com/photo-1628294896516-344868a47181" alt="Lobster Roll">
-                        </div>
-                        <div class="menu-content">
-                            <h4>Lobster Roll</h4>
-                            <div class="menu-ingredients">
-                                Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
-                            </div>
-                            <div class="menu-price">$12.95</div>
-                        </div>
+                    <div class="item-content">
+                        <h3 class="item-title">Fried Papad</h3>
+                        <div class="item-price">₹80</div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <!-- Ice Creams & Desserts Modal -->
+    <div id="iceCreamsDessertsModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">×</span>
+            <h3>Ice Creams & Desserts</h3>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="images/ice cream/Gudbud Ice Cream.avif" alt="Gudbud Ice Cream">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">Gudbud Ice Cream</h3>
+                        <p class="item-description">A delightful mix of ice cream layers with fruits, nuts, and syrup</p>
+                        <div class="item-price">₹249</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="images/deserts/Fruit Salad.jpg" alt="Fruit Salad">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">Fruit Salad</h3>
+                        <p class="item-description">Fresh seasonal fruits tossed with a light dressing</p>
+                        <div class="item-price">₹179</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="images/deserts/Cheese Cherry Pineapple.jpg" alt="Cheese Cherry Pineapple">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">Cheese Cherry Pineapple</h3>
+                        <p class="item-description">A sweet and tangy dessert with pineapple, cherries, and creamy cheese</p>
+                        <div class="item-price">₹270</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
         </div>
     </section>
 
@@ -1249,10 +3006,15 @@
                         </div>
                         <div class="room-text">
                             <h3>Double Deluxe Room</h3>
-                            <div class="price-size">Starts at ₹3,827 | 190 sq.ft</div>
-                            <p>
-                                Perfect for couples or solo travelers, the Double Deluxe Room offers a cozy retreat with modern amenities, a comfortable queen-sized bed, and stylish decor to ensure a relaxing stay.
-                            </p>
+                            <div class="price-size">
+                                <span style="color: green;">21% off</span><br>
+                                <span style="text-decoration: line-through;">₹4,500</span> ₹3,541<br>
+                                + ₹803 taxes & fees<br>
+                                1 room per night
+                            </div>
+                            <p>190 sq.ft (18 sq.mt) | King Bed | Max 2 Guests | City View</p>
+                            <p>A double deluxe room typically refers to a hotel room designed for two guests, offering a higher level of comfort and amenities...</p>
+                            <button class="view-more-btn" onclick="openModal('doubleDeluxeModal')">View More Details</button>
                             <a href="#book-a-table" class="btn-book">Book Now</a>
                         </div>
                     </div>
@@ -1265,10 +3027,15 @@
                         </div>
                         <div class="room-text">
                             <h3>Superior Room</h3>
-                            <div class="price-size">Starts at ₹4,323 | 200 sq.ft</div>
-                            <p>
-                                The Superior Room provides extra space and elegance, featuring a king-sized bed, premium furnishings, and a serene ambiance, ideal for those seeking comfort and sophistication.
-                            </p>
+                            <div class="price-size">
+                                <span style="color: green;">21% off</span><br>
+                                <span style="text-decoration: line-through;">₹5,000</span> ₹3,935<br>
+                                + ₹893 taxes & fees<br>
+                                1 room per night
+                            </div>
+                            <p>200 sq.ft (19 sq.mt) | King Bed | Max 2 Guests | City View</p>
+                            <p>A superior room is a hotel room that offers upgraded features and amenities compared to a standard room...</p>
+                            <button class="view-more-btn" onclick="openModal('superiorModal')">View More Details</button>
                             <a href="#book-a-table" class="btn-book">Book Now</a>
                         </div>
                     </div>
@@ -1281,10 +3048,15 @@
                         </div>
                         <div class="room-text">
                             <h3>Executive Room</h3>
-                            <div class="price-size">Starts at ₹4,755 | 220 sq.ft</div>
-                            <p>
-                                Designed for business travelers, the Executive Room offers a spacious work area, high-speed Wi-Fi, and luxurious bedding, blending productivity with relaxation.
-                            </p>
+                            <div class="price-size">
+                                <span style="color: green;">21% off</span><br>
+                                <span style="text-decoration: line-through;">₹5,500</span> ₹4,328<br>
+                                + ₹981 taxes & fees<br>
+                                1 room per night
+                            </div>
+                            <p>220 sq.ft (20 sq.mt) | King Bed | Max 2 Guests | City View</p>
+                            <p>An executive room is a higher-end hotel room designed to cater to business travelers or those seeking extra comfort...</p>
+                            <button class="view-more-btn" onclick="openModal('executiveModal')">View More Details</button>
                             <a href="#book-a-table" class="btn-book">Book Now</a>
                         </div>
                     </div>
@@ -1297,10 +3069,15 @@
                         </div>
                         <div class="room-text">
                             <h3>Mini Suite Room</h3>
-                            <div class="price-size">Starts at ₹5,620 | 230 sq.ft</div>
-                            <p>
-                                The Mini Suite offers a touch of luxury with a separate sitting area, plush bedding, and elegant decor, perfect for guests desiring extra space and comfort.
-                            </p>
+                            <div class="price-size">
+                                <span style="color: green;">21% off</span><br>
+                                <span style="text-decoration: line-through;">₹6,500</span> ₹5,115<br>
+                                + ₹1,160 taxes & fees<br>
+                                1 room per night
+                            </div>
+                            <p>230 sq.ft (21 sq.mt) | King Bed | Max 2 Guests | City View</p>
+                            <p>A mini suite room is a smaller version of a traditional suite, offering more space and comfort...</p>
+                            <button class="view-more-btn" onclick="openModal('miniSuiteModal')">View More Details</button>
                             <a href="#book-a-table" class="btn-book">Book Now</a>
                         </div>
                     </div>
@@ -1313,10 +3090,15 @@
                         </div>
                         <div class="room-text">
                             <h3>Suite Room</h3>
-                            <div class="price-size">Starts at ₹6,052 | 250 sq.ft</div>
-                            <p>
-                                Our Suite Room is the epitome of luxury, featuring a spacious layout, premium amenities, a private lounge area, and stunning views, ideal for a lavish getaway.
-                            </p>
+                            <div class="price-size">
+                                <span style="color: green;">21% off</span><br>
+                                <span style="text-decoration: line-through;">₹7,000</span> ₹5,509<br>
+                                + ₹1,249 taxes & fees<br>
+                                1 room per night
+                            </div>
+                            <p>250 sq.ft (23 sq.mt) | King Bed | Max 4 Guests | City View</p>
+                            <p>A suite room is a spacious hotel room designed for more comfort and luxury...</p>
+                            <button class="view-more-btn" onclick="openModal('suiteModal')">View More Details</button>
                             <a href="#book-a-table" class="btn-book">Book Now</a>
                         </div>
                     </div>
@@ -1324,6 +3106,134 @@
             </div>
         </div>
     </section>
+
+    <!-- Modals for Room Details -->
+    <!-- Double Deluxe Modal -->
+    <div id="doubleDeluxeModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('doubleDeluxeModal')">×</span>
+            <h3>About the Room</h3>
+            <p>A double deluxe room typically refers to a hotel room designed for two guests, offering a higher level of comfort and amenities compared to standard rooms. It usually features a larger space, upgraded furnishings, and additional conveniences like better quality bedding, a bigger bed often a king or queen size a more spacious bathroom, and possibly extra services like a mini-fridge or a larger TV The deluxe part indicates a higher tier of comfort and quality.</p>
+            <h3>Amenities</h3>
+            <h4>Popular with Guests</h4>
+            <ul>
+                <li>Air Conditioning</li>
+                <li>Bathroom</li>
+            </ul>
+            <h4>Media and Entertainment</h4>
+            <ul>
+                <li>TV</li>
+            </ul>
+            <h4>Bathroom</h4>
+            <ul>
+                <li>Toiletries</li>
+                <li>Hot & Cold Water</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Superior Modal -->
+    <div id="superiorModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('superiorModal')">×</span>
+            <h3>About the Room</h3>
+            <p>A superior room is a hotel room that offers upgraded features and amenities compared to a standard room It usually includes more space, better furnishings and additional comforts like a larger bed, better views or enhanced decor. Superior rooms may also come with extras such as a better bathroom setup, more luxurious linens, or additional services like a coffee maker or premium toiletries. Its considered a step up from a basic room offering a more enjoyable and comfortable stay.</p>
+            <h3>Amenities</h3>
+            <h4>Popular with Guests</h4>
+            <ul>
+                <li>Air Conditioning</li>
+                <li>Bathroom</li>
+            </ul>
+            <h4>Media and Entertainment</h4>
+            <ul>
+                <li>TV</li>
+            </ul>
+            <h4>Bathroom</h4>
+            <ul>
+                <li>Toiletries</li>
+                <li>Hot & Cold Water</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Executive Modal -->
+    <div id="executiveModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('executiveModal')">×</span>
+            <h3>About the Room</h3>
+            <p>An executive room is a higher end hotel room designed to cater to business travelers or those seeking extra comfort and amenities These rooms often feature a larger space a more stylish and modern design and additional conveniences like a work desk upgraded technology such as better WiFi more outlets or a larger TV and sometimes access to an executive lounge with exclusive services like complimentary snacks or drinks. Executive rooms may also offer added privacy a more luxurious bathroom and priority checkin or other personalized services to enhance the guest experience</p>
+            <h3>Amenities</h3>
+            <h4>Popular with Guests</h4>
+            <ul>
+                <li>Air Conditioning</li>
+                <li>Bathroom</li>
+            </ul>
+            <h4>Media and Entertainment</h4>
+            <ul>
+                <li>TV</li>
+            </ul>
+            <h4>Bathroom</h4>
+            <ul>
+                <li>Toiletries</li>
+                <li>Hot & Cold Water</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Mini Suite Modal -->
+    <div id="miniSuiteModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('miniSuiteModal')">×</span>
+            <h3>About the Room</h3>
+            <p>A mini suite room is a smaller version of a traditional suite It typically includes a separate living area and bedroom offering more space and comfort compared to a standard room While not as large as full suites mini suites often feature additional amenities like a sofa coffee table or extra seating along with a larger bathroom or upgraded features This type of room is ideal for guests who want more space and a bit more luxury than a standard room but dont need the full size or amenities of a larger suite</p>
+            <h3>Amenities</h3>
+            <h4>Popular with Guests</h4>
+            <ul>
+                <li>Air Conditioning</li>
+                <li>Bathroom</li>
+            </ul>
+            <h4>Media and Entertainment</h4>
+            <ul>
+                <li>TV</li>
+            </ul>
+            <h4>Bathroom</h4>
+            <ul>
+                <li>Toiletries</li>
+                <li>Hot & Cold Water</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Suite Modal -->
+    <div id="suiteModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('suiteModal')">×</span>
+            <h3>About the Room</h3>
+            <p>A suite room is a spacious hotel room designed for more comfort and luxury It typically includes separate areas for sleeping, living, and sometimes dining Suites often feature a bedroom with a larger or king sized bed a separate living area with a sofa or chairs, and additional amenities like a bigger bathroom, a work desk a mini-fridge or a larger TV Some suites also include extra features such as a dining area, kitchenette or private balcony Suites are ideal for guests looking for more space and a higher level of comfort often used for longer stays or special occasions.</p>
+            <h3>Amenities</h3>
+            <h4>Popular with Guests</h4>
+            <ul>
+                <li>Mineral Water</li>
+                <li>Air Conditioning</li>
+                <li>Bathroom</li>
+                <li>Iron/Ironing Board</li>
+            </ul>
+            <h4>Room Features</h4>
+            <ul>
+                <li>Telephone</li>
+                <li>Work Desk</li>
+            </ul>
+            <h4>Safety and Security</h4>
+            <ul>
+                <li>Safe</li>
+            </ul>
+            <h4>Media and Entertainment</h4>
+            <ul>
+                <li>TV</li>
+            </ul>
+            <h4>Bathroom</h4>
+            <ul>
+                <li>Toiletries</li>
+                <li>Hot & Cold Water</li>
+            </ul>
+        </div>
+    </div>
 
     <!-- Hall Section -->
     <section id="hall" class="hall">
@@ -1336,7 +3246,7 @@
                 <div class="hall-text">
                     <h3>Ideal for Large Events</h3>
                     <p>
-                        Our spacious banquet hall is designed for grand celebrations, accommodating up to 100 guests. Perfect for weddings, corporate events, or large parties, the hall offers flexible seating arrangements and state-of-the-art amenities.
+                        Our spacious banquet hall is designed for grand celebrations, accommodating up to <b><u>500 guests</u></b>. Perfect for weddings, corporate events, or large parties, the hall offers flexible seating arrangements and state-of-the-art amenities.
                     </p>
                     <p>
                         Enjoy exquisite catering from our menu, professional staff, and customizable decor to make your event unforgettable. Contact us to plan your event in our stunning venue.
@@ -1469,7 +3379,7 @@
                         </div>
                         <div class="chef-info">
                             <h4> Raman Bhagat</h4>
-                            <span>Master Chef</span>
+                            <span>Chef</span>
                         </div>
                     </div>
                 </div>
@@ -1490,9 +3400,9 @@
                     </div>
                 </div>
                 <div class="chef-item">
-                    <div class="chef-inner">
+                    <div class="chef-inner hi">
                         <div class="chef-img">
-                            <img src="images/raman.png" alt="Raman Bhagat">
+                            <img src="images/aminities/common_area.avif" alt="Raman Bhagat">
                             <div class="chef-social">
                                 <a href="#"><i class="fab fa-twitter"></i></a>
                                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1500,8 +3410,8 @@
                             </div>
                         </div>
                         <div class="chef-info">
-                            <h4>Sarah Johnson</h4>
-                            <span>Patissier</span>
+                            <h4>Staffs</h4>
+                            <span>Receptionist</span>
                         </div>
                     </div>
                 </div>
@@ -1562,17 +3472,18 @@
                 <div class="contact-card">
                     <i class="fas fa-map-marker-alt"></i>
                     <h3>Address</h3>
-                    <p>Servey 111/1, Plot 1, 2413, 14, Azadpur, Gulbarga Locality, Gulbarga</p>
+                    <p><a href="https://www.google.com/maps/place/Hotel+Tulips+inn+by+VKG/@17.3237307,76.8717121,17z/data=!3m1!4b1!4m9!3m8!1s0x3bc8c1000127462b:0x351fdeb46dee5a0e!5m2!4m1!1i2!8m2!3d17.3237307!4d76.874287!16s%2Fg%2F11w891q14m?authuser=0&entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D">Servey 111/1, Plot 1, 2413, 14, Azadpur, Gulbarga Locality, Gulbarga</a></p>
                 </div>
                 <div class="contact-card">
                     <i class="fas fa-phone"></i>
                     <h3>Call Us</h3>
-                    <p>+91 7022879991</p>
+                    <p><a href="tel:+91 7022879991">+91 7022879991</a></p>
                 </div>
                 <div class="contact-card">
                     <i class="fas fa-envelope"></i>
                     <h3>Email Us</h3>
-                    <p>tuilpsInn.Kalaburgi@gmail.com</p>
+                    <p><a href="mailto:tuilpsInn.Kalaburgi@gmail.com">tuilpsInn.Kalaburgi@gmail.com</p></a>
+                    
                 </div>
                 <div class="contact-card">
                     <i class="fas fa-clock"></i>
@@ -1610,7 +3521,7 @@
             <div class="social-links">
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/tulipsinn.kalaburagi/"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <div class="copyright">
@@ -1618,9 +3529,6 @@
                 <br>Designed by <a href="#">Gautam Prasad</a>
             </div>
         </footer>
-
-        <!-- Font Awesome for icons -->
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
         <!-- JavaScript for interactivity -->
         <script>
@@ -1634,7 +3542,6 @@
                         top: targetSection.offsetTop - 60,
                         behavior: 'smooth'
                     });
-                    // Update active class
                     document.querySelectorAll('.nav-menu a').forEach(link => link.classList.remove('active'));
                     this.classList.add('active');
                 });
@@ -1655,7 +3562,6 @@
                 tab.addEventListener('click', function() {
                     document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
                     this.classList.add('active');
-                    // Add filtering logic here if needed
                 });
             });
 
@@ -1674,10 +3580,7 @@
                 showSlide(currentSlide);
             }
 
-            // Initialize first slide
             showSlide(currentSlide);
-
-            // Auto-advance every 5 seconds
             setInterval(nextSlide, 5000);
 
             // Booking form room type and price display
@@ -1688,17 +3591,17 @@
 
             const roomPrices = {
                 'deluxe': 3500,
-                'double-deluxe': 3827,
-                'superior': 4323,
-                'executive': 4755,
-                'mini-suite': 5620,
-                'suite': 6052
+                'double-deluxe': 3541,
+                'superior': 3935,
+                'executive': 4328,
+                'mini-suite': 5115,
+                'suite': 5509
             };
 
             bookingType.addEventListener('change', function() {
                 if (this.value === 'room') {
                     roomTypeGroup.classList.add('active');
-                    roomType.value = ''; // Reset room type selection
+                    roomType.value = '';
                     priceDisplay.classList.remove('active');
                     priceDisplay.textContent = '';
                 } else {
@@ -1731,24 +3634,21 @@
                 const sidebarDropdown = document.querySelector('.sidebar-dropdown p');
                 const dropdownMenu = document.querySelector('.dropdown-menu');
                 
-                // Open sidebar
                 mobileToggle.addEventListener('click', function() {
                     sidebar.classList.add('active');
                     overlay.classList.add('active');
-                    document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
+                    document.body.style.overflow = 'hidden';
                 });
-                
-                // Close sidebar
-                sidebarClose.addEventListener('click', closeSidebar);
-                overlay.addEventListener('click', closeSidebar);
                 
                 function closeSidebar() {
                     sidebar.classList.remove('active');
                     overlay.classList.remove('active');
-                    document.body.style.overflow = ''; // Re-enable scrolling
+                    document.body.style.overflow = '';
                 }
                 
-                // Handle dropdown in sidebar
+                sidebarClose.addEventListener('click', closeSidebar);
+                overlay.addEventListener('click', closeSidebar);
+                
                 sidebarDropdown.addEventListener('click', function() {
                     dropdownMenu.classList.toggle('active');
                     const icon = sidebarDropdown.querySelector('i');
@@ -1761,13 +3661,77 @@
                     }
                 });
                 
-                // Close sidebar when clicking on a menu item
                 document.querySelectorAll('.sidebar-menu a').forEach(link => {
-                    link.addEventListener('click', function() {
-                        closeSidebar();
-                    });
+                    link.addEventListener('click', closeSidebar);
                 });
             });
+
+            // Modal functionality
+            function openModal(modalId) {
+                const modal = document.getElementById(modalId);
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        closeModal(modalId);
+                    }
+                });
+            }
+
+            function closeModal(modalId) {
+                const modal = document.getElementById(modalId);
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+
+            document.querySelectorAll('.category-tab').forEach(tab => {
+        tab.addEventListener('click', function () {
+            // Remove active class from all tabs
+            document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
+            // Add active class to clicked tab
+            this.classList.add('active');
+    
+            // Hide all category contents
+            document.querySelectorAll('.category-content').forEach(content => content.classList.remove('active'));
+            // Show the selected category content
+            const category = this.getAttribute('data-category');
+            document.getElementById(category).classList.add('active');
+        });
+    });
+    
+    // Modal Functionality
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = 'block';
+    }
+    
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = 'none';
+    }
+    
+    // Open modals when clicking "More Items" buttons
+    document.querySelectorAll('.more-items-btn').forEach(button => {
+        button.addEventListener('click', function () {
+            const modalId = this.getAttribute('data-modal');
+            openModal(modalId);
+        });
+    });
+    
+    // Close modals when clicking the close button
+    document.querySelectorAll('.modal-close').forEach(closeBtn => {
+        closeBtn.addEventListener('click', function () {
+            const modalId = this.closest('.modal').id;
+            closeModal(modalId);
+        });
+    });
+    
+    // Close modals when clicking outside of modal content
+    window.addEventListener('click', function (event) {
+        document.querySelectorAll('.modal').forEach(modal => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
         </script>
     </body>
 </html>
