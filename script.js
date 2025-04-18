@@ -236,3 +236,12 @@ document.querySelectorAll('.gallery-item').forEach(item => {
     }
 });
 });
+function showPopup() {
+    document.getElementById('iplPopup').style.display = 'flex';
+    // Add your image source here
+    document.getElementById('popupImage').src = 'popup.jpg'; // Replace with your image path or data
+}
+
+function closePopup() {
+    document.getElementById('iplPopup').style.display = 'none';
+}
